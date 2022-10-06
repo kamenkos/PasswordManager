@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[Vaults] (
+    [VaultID]   INT            IDENTITY (1, 1) NOT NULL,
+    [UserID]    INT            NOT NULL,
+    [VaultData] NVARCHAR (500) NOT NULL,
+    PRIMARY KEY CLUSTERED ([VaultID] ASC),
+    CONSTRAINT [FK_Vaults_ToTable] FOREIGN KEY ([UserID]) REFERENCES [dbo].[Users] ([UserID])
+);
